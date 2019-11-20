@@ -1,6 +1,6 @@
 # Dissertation-for-bachelor‘s-degree
 
-建立在数据分析基础上的web页面工具——兴趣推荐
+行为分析基础上的web兴趣推荐工具
 
 一、项目基本功能
 
