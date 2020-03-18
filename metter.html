@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Matter-JS</title>
+    <script src="matter.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    var Engine = Matter.Engine;//引擎.引擎模块包含创建和操作引擎的方法
+    var Render = Matter.Render;
+    var World = Matter.World;
+    var Bodies = Matter.Bodies;
+ 
+    var engine = Engine.create();
+    //render(渲染器)将要渲染的物理引擎是上面的engine，而渲染的对象是html网页的body
+    var render = Render.create({element: document.body, engine: engine});
+ 
+// 创建刚体
+var rect = Bodies.rectangle(200, 100, 50, 50), // 矩形
+    circle = Bodies.circle(300, 100, 25), // 圆
+    polygon = Bodies.polygon(450, 100, 5, 25), // 多边形
+    trapezoid = Bodies.trapezoid(590, 100, 50, 50, 3); // 梯形
+
+// 将刚体添加到世界中
+World.add(engine.world, [rect, circle, polygon, trapezoid]);
+
+
+
+    var boxA = Bodies.rectangle(200, 0, 80, 80);
+    var boxB = Bodies.rectangle(450, 100, 80, 80);
+    var ground = Bodies.rectangle(400, 510, 810, 60, {isStatic: true});
+    World.add(engine.world, [boxA, boxB, ground]);// 将所有物体添加到世界中
+    Engine.run(engine);//运行引擎
+    Render.run(render);//运行渲染器
+</script>
+</body>
+</html>
