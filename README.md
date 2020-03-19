@@ -1,4 +1,4 @@
-# 毕设：基于Matter-js的抽象物理场景的操纵显示与问题的建模计算
+# 基于Matter-js的抽象物理场景的操纵显示与问题的建模计算
 
 https://github.com/liabru/matter-js
 
